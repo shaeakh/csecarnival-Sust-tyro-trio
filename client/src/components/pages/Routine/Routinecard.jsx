@@ -87,7 +87,13 @@ const Routinecard = () => {
         </tbody>
       </table>
       {error && <p>{error}</p>}      
-      <Button className='m-2 flex-end	' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'green' }}> + </Button>
+      <Button className='m-2 ' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'green' }}> + </Button>
+      <Button className='m-2 '  type="primary" shape="round" style={{ backgroundColor: 'green' }}>Submit</Button>
+      <table style={{ borderRadius: '10px', border: '1px solid black' }}>
+          <tr style={{ backgroundColor: '#27aa80', border: '1px solid black' }}>
+            <th className='text-white' style={{ border: '1px solid black', padding: '2px', margin:'2px' }}>Gpts Msg Here</th>
+          </tr>
+      </table>
     </div>
   );
 };
