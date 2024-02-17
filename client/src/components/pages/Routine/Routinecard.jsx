@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-
+import ResizableBox from './ResizableBox.jsx';
 import { DownloadOutlined } from '@ant-design/icons';
-import { Button, Divider, Flex, Radio } from 'antd';
+import { Button, Navbar } from 'flowbite-react';
 const Routinecard = () => {
   const [entries, setEntries] = useState([]);
   const [formData, setFormData] = useState({});
@@ -30,7 +30,7 @@ const Routinecard = () => {
     <div>
       <table style={{ borderRadius: '10px', border: '1px solid black' }}>
         <thead>
-          <tr style={{ backgroundColor: '#27aa80', border: '1px solid black' }}>
+          <tr style={{ backgroundColor: 'indigo', border: '1px solid black' }}>
             <th  className='text-white' style={{ border: '1px solid black' }}>Date</th>
             <th  className='text-white' style={{ border: '1px solid black' }}>Time</th>
             <th  className='text-white' style={{ border: '1px solid black' }}>Duration</th>
@@ -39,14 +39,14 @@ const Routinecard = () => {
         </thead>
         <tbody>
           {entries.map((entry, index) => (
-            <tr key={index} style={{ backgroundColor: '#a8ff3e', border: '1px solid black' }}>
-              <td style={{ border: '1px solid black' }}>{entry.Date}</td>
-              <td style={{ border: '1px solid black' }}>{entry.Time}</td>
-              <td style={{ border: '1px solid black' }}>{entry.Duration}</td>
-              <td style={{ border: '1px solid black' }}>{entry.Subject}</td>
+            <tr key={index} style={{ backgroundColor: '#665aa6', border: '1px solid black' }}>
+              <td className='text-white' style={{ border: '1px solid black' }}>{entry.Date}</td>
+              <td className='text-white' style={{ border: '1px solid black' }}>{entry.Time}</td>
+              <td className='text-white' style={{ border: '1px solid black' }}>{entry.Duration}</td>
+              <td className='text-white' style={{ border: '1px solid black' }}>{entry.Subject}</td>
             </tr>
           ))}
-          <tr style={{ backgroundColor: '#32ff6a' }}>
+          <tr style={{ backgroundColor: '#ffffff' }}>
           <td style={{ border: '1px solid black' }}>
               <input
                 type="text"
@@ -87,13 +87,19 @@ const Routinecard = () => {
         </tbody>
       </table>
       {error && <p>{error}</p>}      
-      <Button className='m-2 ' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'green' }}> + </Button>
-      <Button className='m-2 '  type="primary" shape="round" style={{ backgroundColor: 'green' }}>Submit</Button>
-      <table style={{ borderRadius: '10px', border: '1px solid black' }}>
-          <tr style={{ backgroundColor: '#27aa80', border: '1px solid black' }}>
-            <th className='text-white' style={{ border: '1px solid black', padding: '2px', margin:'2px' }}>Gpts Msg Here</th>
-          </tr>
+      {/* <Button className='m-2 ' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'indigo' }}> + </Button>
+      <Button className='m-2 '  type="primary" shape="round" style={{ backgroundColor: 'indigo' }}>Submit</Button> */}
+      <div style={{ display: 'flex', gap: '2px' }}>
+        <Button className='m-2' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'indigo' }}> + </Button>
+        <Button className='m-2' type="primary" shape="round" style={{ backgroundColor: 'indigo' }}>Submit</Button>
+      </div>
+      <div className='flex justify-center'>
+        <table  style={{ backgroundColor: '#171133'}}>
+          <th className='text-white' style={{ padding: '10px' }}>
+            GPT's Code here 
+          </th>
       </table>
+      </div>
     </div>
   );
 };

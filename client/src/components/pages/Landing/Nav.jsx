@@ -5,21 +5,25 @@ export default function Nav() {
   return (
     <Navbar fluid rounded className='my-2'>
       <Navbar.Brand href="https://flowbite-react.com">
-        <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
+        <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" className="mr-3 h-6 sm:h-9" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Mentor Mash</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button>Get started</Button>
+        <Button style={{ backgroundColor: 'indigo' }}>Get started</Button>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
         <Navbar.Link href="#" active>
-          Home
+          <p className='text-grey hover:text-indigo-700'>
+            Home
+          </p>
         </Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
+        <Navbar.Link href="#">
+          <p >About</p>
+        </Navbar.Link>
+        <Navbar.Link href="#"><p className='hover:text-indigo-700'>Services</p></Navbar.Link>
+        <Navbar.Link href="#"><p className='hover:text-indigo-700'>Pricing</p></Navbar.Link>
+        <Navbar.Link href="#"><p className='hover:text-indigo-700'>Contact</p></Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
