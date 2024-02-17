@@ -3,7 +3,7 @@
 
     export default function Dropdwn() {
         var cs;
-        const [selectedClass, setSelectedClass] = useState('');
+        const [selectedClass, setSelectedClass] = useState('Class');
 
         const handleClassSelect = (classValue) => {
             setSelectedClass(classValue);
