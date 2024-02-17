@@ -1,57 +1,95 @@
 import React, { useState } from 'react';
 
-const Routine = () => {
+import { DownloadOutlined } from '@ant-design/icons';
+import { Button, Divider, Flex, Radio } from 'antd';
+const Routinecard = () => {
   const [entries, setEntries] = useState([]);
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleAddEntry = () => {
-    setEntries([...entries, formData]);
-    setFormData({});
+    if (
+      formData.Date &&
+      formData.Time &&
+      formData.Duration &&
+      formData.Subject
+    ) {
+      setEntries([...entries, formData]);
+      setFormData({});
+      setError('');
+    } else {
+      setError('Please fill in all fields');
+    }
   };
 
   return (
     <div>
-      <table style={{ borderRadius: '10px' }}>
+      <table style={{ borderRadius: '10px', border: '1px solid black' }}>
         <thead>
-          <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+          <tr style={{ backgroundColor: '#27aa80', border: '1px solid black' }}>
+            <th  className='text-white' style={{ border: '1px solid black' }}>Date</th>
+            <th  className='text-white' style={{ border: '1px solid black' }}>Time</th>
+            <th  className='text-white' style={{ border: '1px solid black' }}>Duration</th>
+            <th  className='text-white' style={{ border: '1px solid black' }}>Subject</th>
           </tr>
         </thead>
         <tbody>
           {entries.map((entry, index) => (
-            <tr key={index}>
-              <td>{entry.column1}</td>
-              <td>{entry.column2}</td>
+            <tr key={index} style={{ backgroundColor: '#a8ff3e', border: '1px solid black' }}>
+              <td style={{ border: '1px solid black' }}>{entry.Date}</td>
+              <td style={{ border: '1px solid black' }}>{entry.Time}</td>
+              <td style={{ border: '1px solid black' }}>{entry.Duration}</td>
+              <td style={{ border: '1px solid black' }}>{entry.Subject}</td>
             </tr>
           ))}
-          <tr>
-            <td>
+          <tr style={{ backgroundColor: '#32ff6a' }}>
+          <td style={{ border: '1px solid black' }}>
               <input
                 type="text"
-                name="column1"
-                value={formData.column1 || ''}
+                name="Date"
+                value={formData.Date || ''}
                 onChange={handleInputChange}
+                style={{ background: 'transparent', border: 'none' }}
               />
             </td>
-            <td>
+            <td style={{ border: '1px solid black' }}>
               <input
                 type="text"
-                name="column2"
-                value={formData.column2 || ''}
+                name="Time"
+                value={formData.Time || ''}
                 onChange={handleInputChange}
+                style={{ background: 'transparent', border: 'none' }}
+              />
+            </td>
+            <td style={{ border: '1px solid black' }}>
+              <input
+                type="text"
+                name="Duration"
+                value={formData.Duration || ''}
+                onChange={handleInputChange}
+                style={{ background: 'transparent', border: 'none' }}
+              />
+            </td>
+            <td style={{ border: '1px solid black' }}>
+              <input
+                type="text"
+                name="Subject"
+                value={formData.Subject || ''}
+                onChange={handleInputChange}
+                style={{ background: 'transparent', border: 'none' }}
               />
             </td>
           </tr>
         </tbody>
       </table>
-      <button onClick={handleAddEntry}>Add Entry</button>
+      {error && <p>{error}</p>}      
+      <Button className='m-2 flex-end	' onClick={handleAddEntry} type="primary" shape="circle" style={{ backgroundColor: 'green' }}> + </Button>
     </div>
   );
 };
 
-export default Routine;
+export default Routinecard;
