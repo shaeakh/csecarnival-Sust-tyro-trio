@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Divider, Flex, Radio } from 'antd';
-const App = () => {
+export default function Plusbutton(){
   const [size, setSize] = useState('large'); // default is 'middle'
   return (
     <>
@@ -41,4 +41,3 @@ const App = () => {
     </>
   );
 };
-export default App;

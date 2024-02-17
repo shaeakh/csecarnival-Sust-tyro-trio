@@ -9,7 +9,7 @@ export default function Nav() {
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Mentor Mash</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button style={{ backgroundColor: 'indigo' }}>Get started</Button>
+        <Button href='/login' style={{ backgroundColor: 'indigo' }}>Get started</Button>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

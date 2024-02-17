@@ -85,14 +85,7 @@ export default function Regcard() {
                   Sign up
                 </button>
               </div>
-            </form>
-  
-            <p className="text-white mt-10 text-center text-sm text-gray-500">
-              Not a member?{' '}
-              <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                Start a 14 day free trial
-              </a>
-            </p>
+            </form>              
           </div>
         </div>
       </form>

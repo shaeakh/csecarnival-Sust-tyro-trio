@@ -1,0 +1,30 @@
+.resizable-box {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    margin: 2px;
+    overflow: hidden;
+  }
+  
+  .resize-handle {
+    position: absolute;
+    background-color: #000000;
+  }
+  
+  .resize-handle-right {
+    width: 5px;
+    height: 100%;
+    right: -2px;
+    top: 0;
+    cursor: col-resize;
+  }
+  
+  .resize-handle-bottom {
+    width: 100%;
+    height: 5px;
+    bottom: -2px;
+    left: 0;
+    cursor: row-resize;
+  }
+  
